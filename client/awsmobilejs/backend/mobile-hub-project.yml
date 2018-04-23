@@ -1,5 +1,158 @@
 --- !com.amazonaws.mobilehub.v0.Project 
 features:
+  cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic 
+    components:
+      AwsServerlessExpressApi: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-1:903875325251:p6i7i5rr49'
+          name: AwsServerlessExpressApi
+          requires-signin: true
+          sdk-generation-stage-name: Stage
+        paths:
+          /: !com.amazonaws.mobilehub.v0.Function {}
+          '/{proxy+}': !com.amazonaws.mobilehub.v0.Function {}
+      ReactSample-MobileHub-942728628: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-1:903875325251:sbo9l9ff52'
+          name: ReactSample-MobileHub-942728628
+          requires-signin: true
+          sdk-generation-stage-name: Development
+        paths:
+          /items: !com.amazonaws.mobilehub.v0.Function {}
+          '/items/{proxy+}': !com.amazonaws.mobilehub.v0.Function {}
+      catsAndDogs: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          description: kittes and dogs
+          disable-aws-auth: false
+          name: catsAndDogs
+          requires-signin: false
+          sdk-generation-stage-name: Development
+        paths:
+          /dogs: !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/dogsHandler-20180423005317.zip
+            description: 'Handler for calls to resource path : /dogs/{proxy+}'
+            environment: {}
+            handler: index.handler
+            hashcode: pbsUSlx3FPXXjVUqkILcN6cxJOF51TbIMJqgOS0KNRc=
+            memorySize: '128'
+            modified: '2018-04-23T05:54:02.748+0000'
+            name: dogsHandler
+            runtime: nodejs6.10
+            timeout: '3'
+            version: iPuTGbO3aKdHErWdmRI3FivODHJ0LimO
+          '/dogs/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/dogsHandler-20180423005317.zip
+            description: 'Handler for calls to resource path : /dogs/{proxy+}'
+            environment: {}
+            handler: index.handler
+            hashcode: pbsUSlx3FPXXjVUqkILcN6cxJOF51TbIMJqgOS0KNRc=
+            memorySize: '128'
+            modified: '2018-04-23T05:54:02.748+0000'
+            name: dogsHandler
+            runtime: nodejs6.10
+            timeout: '3'
+            version: .SA1.p_G.1EveGBmMsg228WPjS7u6w7J
+          /kitties: !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/kittiesHandler-20180423005317.zip
+            description: 'Handler for calls to resource path : /kitties/{proxy+}'
+            environment: {}
+            handler: index.handler
+            hashcode: pbsUSlx3FPXXjVUqkILcN6cxJOF51TbIMJqgOS0KNRc=
+            memorySize: '128'
+            modified: '2018-04-23T05:54:02.736+0000'
+            name: kittiesHandler
+            runtime: nodejs6.10
+            timeout: '3'
+            version: FOiG7FQydhMLzan.Zbek7ncqINfEQeQ2
+          '/kitties/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/kittiesHandler-20180423005317.zip
+            description: 'Handler for calls to resource path : /kitties/{proxy+}'
+            environment: {}
+            handler: index.handler
+            hashcode: pbsUSlx3FPXXjVUqkILcN6cxJOF51TbIMJqgOS0KNRc=
+            memorySize: '128'
+            modified: '2018-04-23T05:54:02.736+0000'
+            name: kittiesHandler
+            runtime: nodejs6.10
+            timeout: '3'
+            version: g5ND0ykSNZKr0XDRddnvixV1jTW46.lp
+      dev-my-express-application: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-1:903875325251:6rmvjsags1'
+          name: dev-my-express-application
+          requires-signin: true
+          sdk-generation-stage-name: dev
+        paths:
+          /: !com.amazonaws.mobilehub.v0.Function {}
+          /users: !com.amazonaws.mobilehub.v0.Function {}
+          '/users/{proxy+}': !com.amazonaws.mobilehub.v0.Function {}
+          '/{proxy+}': !com.amazonaws.mobilehub.v0.Function {}
+      dev-nan-aws-node-rest-api-mongodb: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-1:903875325251:y26m8nr1ye'
+          name: dev-nan-aws-node-rest-api-mongodb
+          requires-signin: true
+          sdk-generation-stage-name: dev
+        paths:
+          /user: !com.amazonaws.mobilehub.v0.Function {}
+          '/user/{id}': !com.amazonaws.mobilehub.v0.Function {}
+      dev-nan-my-express-application: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-1:903875325251:o1a0ohs0xh'
+          name: dev-nan-my-express-application
+          requires-signin: true
+          sdk-generation-stage-name: dev
+        paths:
+          /: !com.amazonaws.mobilehub.v0.Function {}
+          '/{proxy+}': !com.amazonaws.mobilehub.v0.Function {}
+      dev-nan-serverless-hello-world: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-1:903875325251:gosizt5hrl'
+          name: dev-nan-serverless-hello-world
+          requires-signin: true
+          sdk-generation-stage-name: dev
+        paths:
+          /hello-world: !com.amazonaws.mobilehub.v0.Function {}
+      dev-nan-serverless-rest-api: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-1:903875325251:e4g3gupg64'
+          name: dev-nan-serverless-rest-api
+          requires-signin: true
+          sdk-generation-stage-name: dev
+        paths:
+          /notes: !com.amazonaws.mobilehub.v0.Function {}
+          '/notes/{id}': !com.amazonaws.mobilehub.v0.Function {}
+      dev-nan-serverless-starter: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-1:903875325251:5kmrj39tr7'
+          name: dev-nan-serverless-starter
+          requires-signin: true
+          sdk-generation-stage-name: dev
+        paths:
+          /multi/create: !com.amazonaws.mobilehub.v0.Function {}
+          '/multi/show/{id}': !com.amazonaws.mobilehub.v0.Function {}
+          /single: !com.amazonaws.mobilehub.v0.Function {}
+      nan-simple-microservice-api: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-1:903875325251:awdkhf1vvg'
+          description: Created by AWS Lambda
+          name: nan-simple-microservice-api
+          requires-signin: true
+          sdk-generation-stage-name: DEV
+        paths:
+          /nan-simple-microservice: !com.amazonaws.mobilehub.v0.Function {}
+      toysapi-MobileHub-942728628: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-1:903875325251:wylbsbr646'
+          description: 'toys '
+          name: toysapi-MobileHub-942728628
+          requires-signin: true
+          sdk-generation-stage-name: Development
+        paths:
+          /cars: !com.amazonaws.mobilehub.v0.Function {}
+          '/cars/{proxy+}': !com.amazonaws.mobilehub.v0.Function {}
+          /toys: !com.amazonaws.mobilehub.v0.Function {}
+          '/toys/{proxy+}': !com.amazonaws.mobilehub.v0.Function {}
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
     attributes:
       enabled: true
