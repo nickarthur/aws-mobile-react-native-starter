@@ -43,5 +43,8 @@ features:
   user-files: !com.amazonaws.mobilehub.v0.UserFiles 
     attributes:
       enabled: true
+  user-profiles: !com.amazonaws.mobilehub.v0.UserSettings 
+    attributes:
+      enabled: true
 name: client-2018-04-22-03-39-57
 region: us-east-1
