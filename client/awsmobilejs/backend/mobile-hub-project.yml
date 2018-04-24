@@ -1,5 +1,18 @@
 --- !com.amazonaws.mobilehub.v0.Project 
+apps:
+  android: !com.amazonaws.mobilehub.v0.AppDO {}
+  ios: !com.amazonaws.mobilehub.v0.AppDO {}
+  react-native: !com.amazonaws.mobilehub.v0.AppDO {}
+  web: !com.amazonaws.mobilehub.v0.AppDO {}
 features:
+  bots: !com.amazonaws.mobilehub.v0.Bots 
+    components:
+      MakeAppointment: !com.amazonaws.mobilehub.v0.Bot 
+        attributes:
+          childDirected: false
+          description: Bot to book a dentist appointment.
+          existing: false
+          template: bot-appointments
   cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic 
     components:
       AwsServerlessExpressApi: !com.amazonaws.mobilehub.v0.API 
