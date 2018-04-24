@@ -18,8 +18,9 @@ features:
       AwsServerlessExpressApi: !com.amazonaws.mobilehub.v0.API 
         attributes:
           api-arn: 'arn:aws:execute-api:us-east-1:903875325251:p6i7i5rr49'
+          disable-aws-auth: false
           name: AwsServerlessExpressApi
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: Stage
         paths:
           /: !com.amazonaws.mobilehub.v0.Function {}
@@ -27,12 +28,45 @@ features:
       ReactSample-MobileHub-942728628: !com.amazonaws.mobilehub.v0.API 
         attributes:
           api-arn: 'arn:aws:execute-api:us-east-1:903875325251:sbo9l9ff52'
+          disable-aws-auth: false
           name: ReactSample-MobileHub-942728628
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: Development
         paths:
           /items: !com.amazonaws.mobilehub.v0.Function {}
           '/items/{proxy+}': !com.amazonaws.mobilehub.v0.Function {}
+      bats: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          description: bats that fly in Austin TX
+          disable-aws-auth: false
+          name: bats
+          requires-signin: false
+          sdk-generation-stage-name: Development
+        paths:
+          /items: !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/batsHandler-20180424002620.zip
+            description: 'Handler for calls to resource path : /items/{proxy+}'
+            environment: {}
+            handler: index.handler
+            hashcode: C6gPKKBe08rPmc2h/b4SI9PLJ2RuPVzTuCjKZYABlcc=
+            memorySize: '128'
+            modified: '2018-04-24T05:27:49.375+0000'
+            name: batsHandler
+            runtime: nodejs6.10
+            timeout: '3'
+            version: ozhS6mmYQKg1d.K7mMnu9zKdluk0QY.U
+          '/items/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/batsHandler-20180424002620.zip
+            description: 'Handler for calls to resource path : /items/{proxy+}'
+            environment: {}
+            handler: index.handler
+            hashcode: C6gPKKBe08rPmc2h/b4SI9PLJ2RuPVzTuCjKZYABlcc=
+            memorySize: '128'
+            modified: '2018-04-24T05:27:49.375+0000'
+            name: batsHandler
+            runtime: nodejs6.10
+            timeout: '3'
+            version: sy7NTt56FxAKEdVw3vkSSef1DaDCMTDk
       catsAndDogs: !com.amazonaws.mobilehub.v0.API 
         attributes:
           description: kittes and dogs
@@ -42,69 +76,79 @@ features:
           sdk-generation-stage-name: Development
         paths:
           /dogs: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/dogsHandler-20180423005317.zip
+            codeFilename: uploads/dogsHandler-20180424002620.zip
             description: 'Handler for calls to resource path : /dogs/{proxy+}'
             environment: {}
             handler: index.handler
-            hashcode: pbsUSlx3FPXXjVUqkILcN6cxJOF51TbIMJqgOS0KNRc=
+            hashcode: C6gPKKBe08rPmc2h/b4SI9PLJ2RuPVzTuCjKZYABlcc=
             memorySize: '128'
-            modified: '2018-04-23T05:54:02.748+0000'
+            modified: '2018-04-24T05:27:50.149+0000'
             name: dogsHandler
             runtime: nodejs6.10
             timeout: '3'
-            version: iPuTGbO3aKdHErWdmRI3FivODHJ0LimO
+            version: NHNM.v6awbfRJdj7BUtmJ_Ve6fxAQmvT
           '/dogs/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/dogsHandler-20180423005317.zip
+            codeFilename: uploads/dogsHandler-20180424002620.zip
             description: 'Handler for calls to resource path : /dogs/{proxy+}'
             environment: {}
             handler: index.handler
-            hashcode: pbsUSlx3FPXXjVUqkILcN6cxJOF51TbIMJqgOS0KNRc=
+            hashcode: C6gPKKBe08rPmc2h/b4SI9PLJ2RuPVzTuCjKZYABlcc=
             memorySize: '128'
-            modified: '2018-04-23T05:54:02.748+0000'
+            modified: '2018-04-24T05:27:50.149+0000'
             name: dogsHandler
             runtime: nodejs6.10
             timeout: '3'
-            version: .SA1.p_G.1EveGBmMsg228WPjS7u6w7J
+            version: IRjnv8JDLn402U0Lh4N.RD6p7yAmjVcM
           /kitties: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/kittiesHandler-20180423005317.zip
+            codeFilename: uploads/kittiesHandler-20180424002620.zip
             description: 'Handler for calls to resource path : /kitties/{proxy+}'
             environment: {}
             handler: index.handler
-            hashcode: pbsUSlx3FPXXjVUqkILcN6cxJOF51TbIMJqgOS0KNRc=
+            hashcode: C6gPKKBe08rPmc2h/b4SI9PLJ2RuPVzTuCjKZYABlcc=
             memorySize: '128'
-            modified: '2018-04-23T05:54:02.736+0000'
+            modified: '2018-04-24T05:27:50.615+0000'
             name: kittiesHandler
             runtime: nodejs6.10
             timeout: '3'
-            version: FOiG7FQydhMLzan.Zbek7ncqINfEQeQ2
+            version: 89S199VOH0_PwW9QA5uXpcqphMtDAOsE
           '/kitties/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/kittiesHandler-20180423005317.zip
+            codeFilename: uploads/kittiesHandler-20180424002620.zip
             description: 'Handler for calls to resource path : /kitties/{proxy+}'
             environment: {}
             handler: index.handler
-            hashcode: pbsUSlx3FPXXjVUqkILcN6cxJOF51TbIMJqgOS0KNRc=
+            hashcode: C6gPKKBe08rPmc2h/b4SI9PLJ2RuPVzTuCjKZYABlcc=
             memorySize: '128'
-            modified: '2018-04-23T05:54:02.736+0000'
+            modified: '2018-04-24T05:27:50.615+0000'
             name: kittiesHandler
             runtime: nodejs6.10
             timeout: '3'
-            version: g5ND0ykSNZKr0XDRddnvixV1jTW46.lp
+            version: nOomGlvcBq8o3TviOfRrxWr4VopjjVHM
       dev-my-express-application: !com.amazonaws.mobilehub.v0.API 
         attributes:
           api-arn: 'arn:aws:execute-api:us-east-1:903875325251:6rmvjsags1'
+          disable-aws-auth: false
           name: dev-my-express-application
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: dev
         paths:
           /: !com.amazonaws.mobilehub.v0.Function {}
           /users: !com.amazonaws.mobilehub.v0.Function {}
           '/users/{proxy+}': !com.amazonaws.mobilehub.v0.Function {}
           '/{proxy+}': !com.amazonaws.mobilehub.v0.Function {}
+      dev-myHelloApi: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-1:903875325251:i2s51180rf'
+          name: dev-myHelloApi
+          requires-signin: false
+          sdk-generation-stage-name: dev
+        paths:
+          /hello: !com.amazonaws.mobilehub.v0.Function {}
       dev-nan-aws-node-rest-api-mongodb: !com.amazonaws.mobilehub.v0.API 
         attributes:
           api-arn: 'arn:aws:execute-api:us-east-1:903875325251:y26m8nr1ye'
+          disable-aws-auth: false
           name: dev-nan-aws-node-rest-api-mongodb
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: dev
         paths:
           /user: !com.amazonaws.mobilehub.v0.Function {}
@@ -112,8 +156,9 @@ features:
       dev-nan-my-express-application: !com.amazonaws.mobilehub.v0.API 
         attributes:
           api-arn: 'arn:aws:execute-api:us-east-1:903875325251:o1a0ohs0xh'
+          disable-aws-auth: false
           name: dev-nan-my-express-application
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: dev
         paths:
           /: !com.amazonaws.mobilehub.v0.Function {}
@@ -121,16 +166,18 @@ features:
       dev-nan-serverless-hello-world: !com.amazonaws.mobilehub.v0.API 
         attributes:
           api-arn: 'arn:aws:execute-api:us-east-1:903875325251:gosizt5hrl'
+          disable-aws-auth: false
           name: dev-nan-serverless-hello-world
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: dev
         paths:
           /hello-world: !com.amazonaws.mobilehub.v0.Function {}
       dev-nan-serverless-rest-api: !com.amazonaws.mobilehub.v0.API 
         attributes:
           api-arn: 'arn:aws:execute-api:us-east-1:903875325251:e4g3gupg64'
+          disable-aws-auth: false
           name: dev-nan-serverless-rest-api
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: dev
         paths:
           /notes: !com.amazonaws.mobilehub.v0.Function {}
@@ -138,8 +185,9 @@ features:
       dev-nan-serverless-starter: !com.amazonaws.mobilehub.v0.API 
         attributes:
           api-arn: 'arn:aws:execute-api:us-east-1:903875325251:5kmrj39tr7'
+          disable-aws-auth: false
           name: dev-nan-serverless-starter
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: dev
         paths:
           /multi/create: !com.amazonaws.mobilehub.v0.Function {}
@@ -149,8 +197,9 @@ features:
         attributes:
           api-arn: 'arn:aws:execute-api:us-east-1:903875325251:awdkhf1vvg'
           description: Created by AWS Lambda
+          disable-aws-auth: false
           name: nan-simple-microservice-api
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: DEV
         paths:
           /nan-simple-microservice: !com.amazonaws.mobilehub.v0.Function {}
@@ -158,8 +207,9 @@ features:
         attributes:
           api-arn: 'arn:aws:execute-api:us-east-1:903875325251:wylbsbr646'
           description: 'toys '
+          disable-aws-auth: false
           name: toysapi-MobileHub-942728628
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: Development
         paths:
           /cars: !com.amazonaws.mobilehub.v0.Function {}
